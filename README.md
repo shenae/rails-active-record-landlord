@@ -4,15 +4,15 @@
 
 Fork and clone this repo.
 
-Create a new rails api project called landlord with a postgresql database skipping test files:
+Navigate to the directory.
+
+Create a new rails api project called landlord with a postgresql database skipping test files and skip `.git` init:
 
 ```shell
-rails new landlord --database=postgresql --skip-test
+rails new landlord --database=postgresql --skip-test -G
 ```
 
-Change directories into the Rails app.
-
-Delete the `.git/` directory that was created by `rails new`.
+- Resources: [For a list of flags you can pass as options when creating a new rails app](https://gist.github.com/eliotsykes/ace0222174804372b51a)
 
 Create the database:
 
