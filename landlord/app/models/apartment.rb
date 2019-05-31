@@ -1,3 +1,3 @@
 class Apartment < ApplicationRecord
-    belongs_to: tenants
+    has_and_belongs_to_many :tenants
 end

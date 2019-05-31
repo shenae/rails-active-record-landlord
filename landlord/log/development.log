@@ -53,3 +53,103 @@ Migrating to CreateBuildings (20190524024814)
   ↳ bin/rails:9
   [1m[35m (11.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(883176785832158265)[0m
+  ↳ bin/rails:9
+  [1m[35m (10.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (24.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(883176785832158265)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (11.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(883176785832158265)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateJoinTableApartmentsTenants (20190530225548)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (90.1ms)[0m  [1m[35mCREATE TABLE "apartments_tenants" ("apartment_id" bigint NOT NULL, "tenant_id" bigint NOT NULL)[0m
+  ↳ db/migrate/20190530225548_create_join_table_apartments_tenants.rb:3
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE  INDEX  "index_apartments_tenants_on_apartment_id_and_tenant_id" ON "apartments_tenants"  ("apartment_id", "tenant_id")[0m
+  ↳ db/migrate/20190530225548_create_join_table_apartments_tenants.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190530225548"]]
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (6.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(883176785832158265)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (8.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mApartment Create (44.1ms)[0m  [1m[32mINSERT INTO "apartments" ("unit", "num_beds", "num_baths", "nickname", "occupation", "ssn", "has_pets", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["unit", "A"], ["num_beds", 1], ["num_baths", 1], ["nickname", "Troy"], ["occupation", "back end developer"], ["ssn", 12345677], ["has_pets", true], ["created_at", "2019-05-31 01:47:08.240410"], ["updated_at", "2019-05-31 01:47:08.240410"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mApartment Create (1.8ms)[0m  [1m[32mINSERT INTO "apartments" ("unit", "num_beds", "num_baths", "nickname", "occupation", "ssn", "has_pets", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["unit", "B"], ["num_beds", 2], ["num_baths", 1], ["nickname", "Boo"], ["occupation", "full stack developer"], ["ssn", 12345678], ["has_pets", false], ["created_at", "2019-05-31 01:47:08.292167"], ["updated_at", "2019-05-31 01:47:08.292167"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mApartment Create (1.3ms)[0m  [1m[32mINSERT INTO "apartments" ("unit", "num_beds", "num_baths", "nickname", "occupation", "ssn", "has_pets", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["unit", "C"], ["num_beds", 3], ["num_baths", 2], ["nickname", "Mama Code"], ["occupation", "software engineer"], ["ssn", 12345679], ["has_pets", false], ["created_at", "2019-05-31 01:47:08.299263"], ["updated_at", "2019-05-31 01:47:08.299263"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTenant Create (3.1ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "date_of_birth", "monthly_rent", "allows_pets", "sq_ft", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Troy"], ["last_name", "Richards"], ["date_of_birth", 20080609], ["monthly_rent", 1000], ["allows_pets", false], ["sq_ft", 1000], ["created_at", "2019-05-31 01:47:08.340375"], ["updated_at", "2019-05-31 01:47:08.340375"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTenant Create (0.5ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "date_of_birth", "monthly_rent", "allows_pets", "sq_ft", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Neicy"], ["last_name", "Crumpler"], ["date_of_birth", 20021008], ["monthly_rent", 1100], ["allows_pets", false], ["sq_ft", 900], ["created_at", "2019-05-31 01:47:08.346590"], ["updated_at", "2019-05-31 01:47:08.346590"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTenant Create (0.4ms)[0m  [1m[32mINSERT INTO "tenants" ("first_name", "last_name", "date_of_birth", "monthly_rent", "allows_pets", "sq_ft", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Lori"], ["last_name", "Hines"], ["date_of_birth", 20080604], ["monthly_rent", 1200], ["allows_pets", false], ["sq_ft", 1000], ["created_at", "2019-05-31 01:47:08.350141"], ["updated_at", "2019-05-31 01:47:08.350141"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mBuilding Create (4.4ms)[0m  [1m[32mINSERT INTO "buildings" ("address", "num_floors", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["address", "500 Fordham Street"], ["num_floors", 3], ["created_at", "2019-05-31 01:47:08.366735"], ["updated_at", "2019-05-31 01:47:08.366735"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (12.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mBuilding Create (0.5ms)[0m  [1m[32mINSERT INTO "buildings" ("address", "num_floors", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["address", "404 Myrtle"], ["num_floors", 2], ["created_at", "2019-05-31 01:47:08.386314"], ["updated_at", "2019-05-31 01:47:08.386314"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (11.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mBuilding Create (0.5ms)[0m  [1m[32mINSERT INTO "buildings" ("address", "num_floors", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["address", "702 E 79th Street"], ["num_floors", 4], ["created_at", "2019-05-31 01:47:08.401280"], ["updated_at", "2019-05-31 01:47:08.401280"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (11.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[36mTenant Load (2.4ms)[0m  [1m[34mSELECT "tenants".* FROM "tenants"[0m
